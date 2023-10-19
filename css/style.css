@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 5rem;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 1.1rem;
+    position: sticky;
+    top: 0;
+}
+
+.header .header__logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header a:hover {
+    color: #977f53;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header ul li {
+    margin: 0 1rem;
+    font-size: 0.8rem;
+}
+
+.header ul a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.header ul a:hover {
+    text-decoration: wavy underline;
+    color: #977f53;
+}
+
+
+.content {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 73%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 5rem;
+    background-color: #0e0e0e;
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.footer__small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+.footer__small > * {
+    margin: 0.2rem 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Martian Mono", monospace;
+}
+
+body, html {
+    height: 100vh;
+}
