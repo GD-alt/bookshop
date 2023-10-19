@@ -6,9 +6,9 @@
         <ul>
             <li><a href="index.php">Главная</a></li>
             <?php
+            session_start();
                 if (isset($_SESSION['user_id'])) {
-                    echo '<li><a href="profile.php">Профиль</a></li>';
-                    echo '<li><a href="logout.php">Выйти</a></li>';
+                    echo '<li><a href="logoutCompletion.php">Выйти</a></li>';
                     echo '<li>(вы вошли как ' . $_SESSION['real_name'] .')</li>';
                 } else {
                     echo '<li><a href="login.php">Войти</a></li>';
