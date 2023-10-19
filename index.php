@@ -17,7 +17,7 @@
             <form action="search.php" method="get">
                 <div class="searchbar">
                 <label>
-                    <input type="text" name="search" placeholder="Найти книгу">
+                    <input type="text" name="bookSearch" placeholder="Найти книгу">
                 </label>
                 <button type="submit"><i class="fi fi-sr-search"></i></button>
                 </div>

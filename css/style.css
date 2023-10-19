@@ -96,7 +96,7 @@
     text-shadow: #0e0e0e 0.2rem 0.2rem 0.2rem;
     height: 30%;
     box-shadow: #0e0e0e 0.2rem 0.2rem 0.2rem;
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .searchbar {
@@ -209,6 +209,13 @@ button:hover {
 
 .book__buttons > *:first-child {
     border-radius: 5px 0 0 5px;
+}
+
+.book__buttons > *:first-child:hover {
+    background: #977f53;
+    color: #cccccc;
+    box-shadow: none;
+    cursor: default;
 }
 
 .book__buttons > *:last-child {

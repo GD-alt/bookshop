@@ -26,7 +26,7 @@
                 <p><b>Год:</b> ' . $book['year'] . '</p>
             </div>
             <div class="book__buttons">
-            <button><a href=""><i class="fi fi-sr-shopping-cart"></i> Купить</a></button>
+            <button disabled><a href=""><i class="fi fi-sr-shopping-cart"></i> ' . $book['price'] .'₽</a></button>
             <button><a href="book.php?book_id=' . $book['book_id'] . '"><i class="fi fi-sr-info"></i> Подробнее</a></button></div>
         </div>';
     }
