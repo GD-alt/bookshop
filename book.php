@@ -1,5 +1,31 @@
 <?php
+    $book_id = $_GET['book_id'];
+    $connection = mysqli_connect('localhost', 'root', '', 'bookshop');
 
+    // Check connection
+    if (!$connection) {
+        die(). "Connection failed: " . mysqli_connect_error();
+    }
+
+    // Fetch book
+    $sql = "SELECT * FROM books WHERE book_id = $book_id";
+
+    $result = mysqli_query($connection, $sql);
+
+    $book = mysqli_fetch_assoc($result);
+
+    // If book not found
+    if (!$book) {
+        // Open 404 page on the same URL as user entered
+        $file = fopen('404.php', 'r');
+
+        while (!feof($file)) {
+            echo fgets($file);
+        }
+
+        fclose($file);
+        exit();
+    }
 ?>
 
 <!doctype html>
@@ -11,26 +37,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Очень книжный</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bookpage.css">
 </head>
 <body>
 <?php
 include 'header.php';
 ?>
-<div class="content__cover">
-    <h1>Добро пожаловать на сайт сети магазинов «Очень книжный!»</h1>
-    <form action="search.php" method="get">
-        <div class="searchbar">
-            <label>
-                <input type="text" name="search" placeholder="Найти книгу">
-            </label>
-            <button type="submit"><i class="fi fi-sr-search"></i></button>
-        </div>
-    </form>
-</div>
-<div class="content">
-    <h1>Последние поступления</h1>
-    <div class="books">
-        <?php include 'lastBooks.php';?>
+<div class="grid-content">
+    <div class="book__picture">
+        <?php
+        if ($book['image'] != '') {
+            $book['image'] = '<img src="' . $book['image'] . '" alt="' . $book['name'] . '">';
+        }
+        else {
+            $book['image'] = '<img src="https://htmlcolorcodes.com/assets/images/colors/bright-blue-color-solid-background-1920x1080.png" alt="' . $book['name'] . '">';
+        }
+        ?>
+        <?php echo $book['image']; ?>
     </div>
 </div>
 <?php

@@ -99,6 +99,10 @@
     padding: 2rem;
 }
 
+.content__cover > h1 {
+    text-align: center;
+}
+
 .searchbar {
     display: flex;
     justify-content: center;
@@ -139,6 +143,7 @@ button[type="submit"] {
 button:hover {
     box-shadow: #0e0e0e 0.2rem 0.2rem 0.2rem;
     background: #6e5c3d;
+    border: #6e5c3d 5px solid;
 }
 
 .searchbar > form > * {
@@ -225,6 +230,21 @@ button:hover {
 .book__buttons > * > a {
     text-decoration: none;
     color: #cccccc;
+}
+
+button.ran-out {
+    background: #4b4b4b;
+    color: #cccccc;
+    border: #4b4b4b 5px solid;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.book__buttons > *:first-child.ran-out:hover {
+    background: #4b4b4b;
+    color: #cccccc;
+    box-shadow: none;
+    cursor: not-allowed;
 }
 
 .book > img {

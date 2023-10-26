@@ -12,6 +12,12 @@
     $result = mysqli_query($connection, $sql);
 
     foreach ($result as $book) {
+        $classInjection = '';
+        $priceInjection = '<i class="fi fi-sr-shopping-cart"></i>' . $book['price'] .'₽';
+        if ($book['quantity'] == 0) {
+            $classInjection = 'class="ran-out"';
+            $priceInjection = '<i class="fi fi-sr-ban"></i> Нет в нал.';
+        }
         if ($book['image'] != '') {
             $book['image'] = '<img src="' . $book['image'] . '" alt="' . $book['name'] . '">';
         }
@@ -26,7 +32,7 @@
                 <p><b>Год:</b> ' . $book['year'] . '</p>
             </div>
             <div class="book__buttons">
-            <button disabled><a href=""><i class="fi fi-sr-shopping-cart"></i> ' . $book['price'] .'₽</a></button>
+            <button disabled '. $classInjection .'>' . $priceInjection .'</button>
             <button><a href="book.php?book_id=' . $book['book_id'] . '"><i class="fi fi-sr-info"></i> Подробнее</a></button></div>
         </div>';
     }
