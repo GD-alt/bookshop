@@ -45,6 +45,7 @@ include 'header.php';
 ?>
 <div class="grid-content">
     <div class="book__picture">
+
         <?php
         if ($book['image'] != '') {
             $book['image'] = '<img src="' . $book['image'] . '" alt="' . $book['name'] . '">';
@@ -52,8 +53,30 @@ include 'header.php';
         else {
             $book['image'] = '<img src="https://htmlcolorcodes.com/assets/images/colors/bright-blue-color-solid-background-1920x1080.png" alt="' . $book['name'] . '">';
         }
+        echo $book['image'];
         ?>
-        <?php echo $book['image']; ?>
+        <div class="book__buttons">
+            <?php
+            $classInjection = '';
+            $priceInjection = '<i class="fi fi-sr-shopping-cart"></i>' . $book['price'] .'₽';
+            if ($book['quantity'] == 0) {
+                $classInjection = 'class="ran-out"';
+                $priceInjection = '<i class="fi fi-sr-ban"></i> Нет в нал.';
+            }
+
+            echo '<button disabled '. $classInjection .'>' . $priceInjection .'</button>
+            <button>На складе: ' . $book['quantity'] . '</button></div>';
+            ?>
+        </div>
+
+        <div class="book__data">
+            <h1><?php echo $book['name']; ?></h1>
+            <ul>
+                <li><b>Автор:</b> <?php echo $book['author']; ?></li>
+                <li><b>Год:</b> <?php echo $book['year']; ?></li>
+            </ul>
+            <p><?php echo $book['description']; ?></p>
+        </div>
     </div>
 </div>
 <?php

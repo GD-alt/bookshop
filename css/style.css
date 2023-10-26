@@ -54,7 +54,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 73%;
+    min-height: 75%;
     height: fit-content;
 }
 
@@ -95,7 +95,7 @@
     color: #cccccc;
     text-shadow: #0e0e0e 0.2rem 0.2rem 0.2rem;
     height: 30%;
-    box-shadow: #0e0e0e 0.2rem 0.2rem 0.2rem;
+    box-shadow: #0e0e0e 0.2rem 0.2rem 1rem;
     padding: 2rem;
 }
 
