@@ -17,20 +17,13 @@
 }
 
 img {
-    width: 80%;
+    width: 55%;
     border: #977f53 5px solid;
     border-radius: 5px;
 }
 
 .book__buttons {
     width: 80%;
-}
-
-.book__buttons > *:hover {
-    background: #977f53;
-    color: #cccccc;
-    box-shadow: none;
-    cursor: default;
 }
 
 .book__data {
@@ -51,7 +44,6 @@ img {
     padding-left: 0.5rem;
     border-left: #977f53 5px solid;
     min-height: 2.2rem;
-    alignment-baseline: center;
     font-size: small;
 }
 

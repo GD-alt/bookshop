@@ -46,6 +46,28 @@ include 'header.php';
 <div class="grid-content">
     <div class="book__picture">
 
+        <script>
+            function addToCart() {
+                console.log(<?php echo $book['book_id']; ?>);
+                const url = 'api/basket.php'
+
+                let formData = new FormData();
+
+                formData.append('book', <?php echo $book['book_id']; ?>);
+
+                // POST to api/basket.php with id in body
+                fetch(url, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => {
+                    return response.json();
+                }).then(data => {
+                    if (data.success) {
+                        alert('Товар добавлен в корзину!');
+                    }
+                })
+            }
+        </script>
         <?php
         if ($book['image'] != '') {
             $book['image'] = '<img src="' . $book['image'] . '" alt="' . $book['name'] . '">';
@@ -64,7 +86,7 @@ include 'header.php';
                 $priceInjection = '<i class="fi fi-sr-ban"></i> Нет в нал.';
             }
 
-            echo '<button disabled '. $classInjection .'>' . $priceInjection .'</button>
+            echo '<button onclick="addToCart()" '. $classInjection .'>' . $priceInjection .'</button>
             <button>На складе: ' . $book['quantity'] . '</button></div>';
             ?>
         </div>
